@@ -33,7 +33,7 @@ public class JdbcUtil {
 	}//defalut 생성자
 	
 	
-	public JdbcUtil getInstance() {
+	public static JdbcUtil getInstance() {
 		return instance;
 	}//getInstance()
 	
