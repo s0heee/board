@@ -11,6 +11,6 @@
 				initialSize="50"
 				maxTotal="20"
 				maxIdle="10"
-				maxWaitMillis="10000" />
+				maxWaitMillis="100000" />
 
 </Context>

@@ -3,9 +3,11 @@ package common;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
 
 public class JdbcUtil {
 	private static JdbcUtil instance = new JdbcUtil();
@@ -16,8 +18,12 @@ public class JdbcUtil {
 			Class.forName("oracle.jdbc.OracleDriver");
 			System.out.println("드라이버 로딩 성공!");
 			
-			InitialContext ctx = new InitialContext();
+			Context ctx = new InitialContext();
+			System.out.println("t+ 1.ctx: " + ctx);
+			
 			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/myOracle");
+			System.out.println("t+ 2.ds: " + ds);
+			
 			System.out.println("Connection Pool 생성!");
 			
 		} catch (ClassNotFoundException e) {

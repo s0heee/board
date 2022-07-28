@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 import common.JdbcUtil;
 
@@ -45,15 +44,21 @@ public class BoardDAO {
 			e.printStackTrace();
 		} finally {
 			
-			try {
-				Objects.requireNonNull(pstmt);
-				pstmt.close();
-				
-				Objects.requireNonNull(conn);
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}//try-catch
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}// try-catch
+			}// if
+			
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}// try-catch
+			}// if
 			
 		}// try-catch-finally
 		
@@ -97,18 +102,29 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally {
 			
-			try {
-				Objects.requireNonNull(rs);
-				rs.close();
-				
-				Objects.requireNonNull(pstmt);
-				pstmt.close();
-				
-				Objects.requireNonNull(conn);
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}//try-catch
+			if(rs != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}// try-catch
+			}// if
+			
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}// try-catch
+			}// if
+			
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}// try-catch
+			}// if
 			
 		}// try-catch-finally
 		
@@ -150,18 +166,29 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally {
 			
-			try {
-				Objects.requireNonNull(rs);
-				rs.close();
-				
-				Objects.requireNonNull(pstmt);
-				pstmt.close();
-				
-				Objects.requireNonNull(conn);
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}//try-catch
+			if(rs != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}// try-catch
+			}// if
+			
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}// try-catch
+			}// if
+			
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}// try-catch
+			}// if
 			
 		}// try-catch-finally
 		
